@@ -1,0 +1,56 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.blockquote-footer::before {
+    content: "\2014 \00A0";
+}
+
+a, a:hover {
+    color: #8bc34a;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+blockquote .blockquote-footer {
+    font-size: 1.25rem;
+}
+
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #727272;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 0.05rem solid #e5e5e5;
+}
+
+article time {
+    color: #999;
+}
+
+article h2 {
+    font-weight: 700;
+}
+article h2 a, article h2 a:hover {
+    color: #222;
+    font-weight: 900;
+}
+
+article img.img-thumbnail {
+    padding: 0;
+    border: none;
+}
+
+article .post-meta a{
+    color: #8bc34a;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+.articles article h2 {
+    font-size: 18px;
+}
+
+.articles article .post-meta{
+    font-size: 14px;
+}

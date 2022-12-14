@@ -11,158 +11,31 @@
     <div class="row g-5">
         <div class="col-md-8 container">
             <div class="row articles">
+                {{ range where .Site.RegularPages "Type" "blog" }}
                 <div class="col-md-6">
                     <article class="position-relative post-entry">
                         <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
                             class="img-thumbnail mb-4" />
                         <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <time datetime="">July 2, 2020</span>
+                            {{ if isset .Params "tags" }}
+                            {{ $count := len .Params.tags }}
+                            {{ if gt $count 0 }}
+                            {{ range $k, $v := .Params.tags}}
+                            <a href="{{ "/tags/" | relLangURL }}#{{ . | urlize }}" class="tag">{{ . }}</a>{{ if lt $k (sub $count 1) }},{{ end }}
+                            {{ end }} -
+                            {{ end }}
+                            {{ end }}
+                            <time datetime="">{{ .Date | time.Format ":date_long" }}</span>
                         </div>
                         <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
+                            <a class="stretched-link" href="{{ .Permalink }}">{{ .Title }}</a>
                         </h2>
                         <p>Far far away, behind the word mountains, far from the countries Vokalia and
                             Consonantia,
                             there live the blind texts.</p>
                     </article>
-
                 </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
-                <div class="col-md-6">
-                    <article class="position-relative post-entry">
-                        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
-                            class="img-thumbnail mb-4" />
-                        <div class="post-meta mb-1">
-                            <a href="#" class="tag">Docker</a>,
-                            <a href="#" class="tag">Docker Compose</a> -
-                            <span class="date">July 2, 2020</span>
-                        </div>
-                        <h2 class="heading mb-3">
-                            <a class="stretched-link" href="#">Your most unhappy customers are your greatest source
-                                of learning.</a>
-                        </h2>
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-                            Consonantia,
-                            there live the blind texts.</p>
-                    </article>
-
-                </div>
+                {{ end }}
             </div>
         </div>
 

@@ -1,0 +1,18 @@
+{{ define "main" }}
+<main class="container">
+<div class="row g-5">
+    <div class="col-md-8 container">
+        <h1 class="pb-2 mb-4 border-bottom">{{ .Data.Term }}</h1>
+        <div class="row articles">
+            {{ range .Data.Pages }}
+            {{ partial "posts-item.html" . }}
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        {{ partial "sidebar.html" . }}
+    </div>
+</div>
+</main>
+{{ end }}

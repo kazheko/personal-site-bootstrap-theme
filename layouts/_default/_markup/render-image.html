@@ -1,0 +1,5 @@
+{{- $Permalink := .Destination | relURL | safeURL -}}
+{{- $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) -}}
+{{- $alt := .PlainText | safeHTML -}}
+
+<img src="{{ $image.RelPermalink }}" class="img-fluid"- alt="{{ $alt }}" />

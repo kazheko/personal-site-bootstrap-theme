@@ -6,7 +6,8 @@
     content: "\2014 \00A0";
 }
 
-a, a:hover {
+a,
+a:hover {
     color: #8bc34a;
     font-weight: 400;
     text-decoration: none;
@@ -31,7 +32,9 @@ article time {
 article h2 {
     font-weight: 700;
 }
-article h2 a, article h2 a:hover {
+
+article h2 a,
+article h2 a:hover {
     color: #222;
     font-weight: 900;
 }
@@ -41,7 +44,7 @@ article img.img-thumbnail {
     border: none;
 }
 
-article .post-meta a{
+article .post-meta a {
     color: #8bc34a;
     font-weight: 800;
     text-decoration: none;
@@ -51,6 +54,23 @@ article .post-meta a{
     font-size: 18px;
 }
 
-.articles article .post-meta{
+.articles article .post-meta {
     font-size: 14px;
+}
+
+#TableOfContents>ul {
+    padding: 0;
+}
+
+#TableOfContents ul li {
+    display: block;
+}
+
+#TableOfContents ul li a {
+    display: block;
+    color: rgb(33,37,41);
+}
+
+#TableOfContents ul li a:hover {
+    color: #006C84;
 }

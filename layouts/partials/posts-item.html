@@ -1,7 +1,14 @@
 <div class="col-md-6">
     <article class="position-relative post-entry">
-        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp"
+        {{- if isset .Params "thumbnail" }}
+        {{ $image := .Resources.GetMatch .Params.thumbnail }}
+        <img src="{{ $image.RelPermalink }}" alt="{{ .Title }}"
             class="img-thumbnail mb-4" />
+        {{ else }}
+        <img src="https://preview.colorlib.com/theme/magdesign/images/img_2.jpg.webp" alt="{{ .Title }}"
+            class="img-thumbnail mb-4" />
+        {{ end }}
+        
         <div class="post-meta mb-1">
             {{ if isset .Params "tags" }}
             {{ $count := len .Params.tags }}
@@ -11,7 +18,7 @@
             {{ end }} -
             {{ end }}
             {{ end }}
-            <time datetime="">{{ .Date | time.Format ":date_long" }}</span>
+            <time datetime="{{ .Date | time.Format ":date_long"}}">{{ .Date | time.Format ":date_long" }}</time>
         </div>
         <h2 class="heading mb-3">
             <a class="stretched-link" href="{{ .Permalink }}">{{ .Title }}</a>

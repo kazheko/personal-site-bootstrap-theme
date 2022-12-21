@@ -1,18 +1,29 @@
 {{ define "main" }}
 <main class="container">
-<div class="row g-5">
-    <div class="col-md-8 container">
-        <h1 class="pb-2 mb-4 border-bottom">{{ .Data.Term }}</h1>
-        <div class="row articles">
-            {{ range .Data.Pages }}
-            {{ partial "posts-item.html" . }}
+    <div class="row g-5">
+        <div class="col-md-8 container">
+            {{ with .Title }}
+            <h1 class="pb-2 mb-4">{{ . }}</h1>
+            {{ end }}
+            {{ range .Paginator.Pages }}
+
+            <article class="position-relative post-entry border-bottom mb-3 pb-3">
+                <h2 class="mb-0">
+                    <a class="stretched-link fs-4 fw-bold" href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+                <div class="post-meta mb-1">
+                    <time datetime="{{ .Date | time.Format " :date_long"}}">
+                        {{ .Date | time.Format ":date_long" }}
+                    </time>
+                </div>
+            </article>
+
             {{ end }}
         </div>
-    </div>
 
-    <div class="col-md-4">
-        {{ partial "sidebar.html" . }}
+        <div class="col-md-4">
+            {{ partial "sidebar.html" . }}
+        </div>
     </div>
-</div>
 </main>
 {{ end }}

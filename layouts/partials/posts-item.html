@@ -21,10 +21,10 @@
             <time datetime="{{ .Date | time.Format ":date_long"}}">{{ .Date | time.Format ":date_long" }}</time>
         </div>
         <h2 class="heading mb-3">
-            <a class="stretched-link" href="{{ .Permalink }}">{{ .Title }}</a>
+            <a class="stretched-link fw-bold" href="{{ .Permalink }}">{{ .Title }}</a>
         </h2>
-        <p>Far far away, behind the word mountains, far from the countries Vokalia and
-            Consonantia,
-            there live the blind texts.</p>
+        <p>
+            {{ .Summary }}
+        </p>
     </article>
 </div>

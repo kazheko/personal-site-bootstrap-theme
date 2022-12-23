@@ -53,10 +53,6 @@ article .post-meta a {
     font-size: 18px;
 }
 
-.articles article .post-meta {
-    font-size: 14px;
-}
-
 #TableOfContents>ul {
     padding: 0;
 }
@@ -72,4 +68,24 @@ article .post-meta a {
 
 #TableOfContents ul li a:hover {
     color: #006C84;
+}
+
+.card.about-card {
+    border: 0;
+}
+
+.about-card .card-up {
+    height: 120px;
+    overflow: hidden;
+    background-color: #7ba4a8;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.about-card .avatar {
+    width: 110px;
+    margin-top: -60px;
+    overflow: hidden;
+    border: 3px solid #fff;
+    border-radius: 50%;
 }

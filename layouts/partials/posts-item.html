@@ -9,12 +9,12 @@
             class="img-thumbnail mb-4" />
         {{ end }}
         
-        <div class="post-meta mb-1">
+        <div class="post-meta mb-1 fs-6">
             {{ if isset .Params "tags" }}
             {{ $count := len .Params.tags }}
             {{ if gt $count 0 }}
             {{ range $k, $v := .Params.tags}}
-            <a href="{{ "/tags/" | relLangURL }}#{{ . | urlize }}" class="tag">{{ . }}</a>{{ if lt $k (sub $count 1) }},{{ end }}
+            <a href="{{ "/tags/" | relLangURL }}#{{ . | urlize }}">{{ . }}</a>{{ if lt $k (sub $count 1) }},{{ end }}
             {{ end }} -
             {{ end }}
             {{ end }}
